@@ -1,3 +1,6 @@
+from stack import Stack
+
+
 class Queue:
     def __init__(self):
         self.push_stack = Stack()
