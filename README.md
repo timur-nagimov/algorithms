@@ -56,4 +56,3 @@
     * [air_cond.py](.\algorithms\Y_training_1\s1\air_cond.py)
     * [phone_numbers.py](.\algorithms\Y_training_1\s1\phone_numbers.py)
     * [triangle.py](.\algorithms\Y_training_1\s1\triangle.py)
-* [README.md](.\algorithms\README.md)
