@@ -1,3 +1,5 @@
+'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C'
+
 n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 find_numbs = map(int, input().split())
