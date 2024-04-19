@@ -4,20 +4,22 @@ n, m = map(int, input().split())
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
 
+# Число пар равных чисел
 i = 0
 j = 0
 
-ans = 0
-answers = [0]*n
-while i < n:
+ans_arr = [0]*m
+while j < m:
 
-    while j < m and b[j] <= a[i]:
+    while i < n and a[i] <= b[j]:
         if a[i] == b[j]:
-            answers[i] += 1
-        j += 1
+            ans_arr[j] += 1
+            i += 1
 
-    if i != 0 and a[i] == a[i-1]:
-        answers[i] = answers[i-1]
-    i += 1
+    if j > 0 and b[j-1] == b[j]:
+        ans_arr[j] = ans_arr[j-1]
 
-print(sum(answers))
+    j += 1
+
+
+print(sum(ans_arr))
