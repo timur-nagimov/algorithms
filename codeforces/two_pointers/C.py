@@ -14,7 +14,7 @@ while j < m:
     while i < n and a[i] <= b[j]:
         if a[i] == b[j]:
             ans_arr[j] += 1
-            i += 1
+        i += 1
 
     if j > 0 and b[j-1] == b[j]:
         ans_arr[j] = ans_arr[j-1]
