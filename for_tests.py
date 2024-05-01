@@ -1,13 +1,11 @@
-def sift_down(heap, idx) -> int:
-    #  Your code
-    #  “ヽ(´▽｀)ノ”
-    pass
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        letters_set = set()
+        max_ans = 0
 
-
-def test():
-    sample = [-1, 12, 1, 8, 3, 4, 7]
-    assert sift_down(sample, 2) == 5
-
-
-if __name__ == '__main__':
-    test()
+        l = 0
+        for r in range(n):
+            if s[r] not in letters_set:
+                letters_set.add(s[r])
+                max_ans = max(max_ans, r - l + 1)
