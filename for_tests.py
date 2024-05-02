@@ -1,11 +1,4 @@
-class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        n = len(s)
-        letters_set = set()
-        max_ans = 0
+dict1 = {'A': 1, 'B': 2}
+dict2 = {'B': 2, 'A': 1}
 
-        l = 0
-        for r in range(n):
-            if s[r] not in letters_set:
-                letters_set.add(s[r])
-                max_ans = max(max_ans, r - l + 1)
+print(dict1 == dict2)
