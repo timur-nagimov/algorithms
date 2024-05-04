@@ -1,3 +1,3 @@
-my_dict = {1: 0, 2: 0, 3: 0}
+intervals = [[15, 15], [1, 3], [2, 6], [8, 10], [15, 18], [2, 7]]
 
-print(list(my_dict.keys()))
+print(sorted(intervals))
