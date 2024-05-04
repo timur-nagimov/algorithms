@@ -1,3 +1,3 @@
+my_dict = {1: 0, 2: 0, 3: 0}
 
-isomorphia: dict = {}
-print(isomorphia)
+print(list(my_dict.keys()))
