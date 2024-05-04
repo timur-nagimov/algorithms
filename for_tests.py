@@ -1,3 +1,9 @@
-intervals = [[15, 15], [1, 3], [2, 6], [8, 10], [15, 18], [2, 7]]
+import heapq
 
-print(sorted(intervals))
+heap = [1, 2, 5486, -1, 2, 0, 1, 1, 1]
+
+heapq.heapify(heap)
+print(heap)
+
+while heap:
+    print(heapq.heappop(heap))
