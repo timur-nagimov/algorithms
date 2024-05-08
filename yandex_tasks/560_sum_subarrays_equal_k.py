@@ -3,7 +3,7 @@ class Solution:
         pref_sum = 0
         prev_sums = {}
         prev_sums[pref_sum] = 1
-
+        # можно решить за O(n^2) полным перебором без исп. доп памяти
         answer = 0
         for i in range(len(nums)):
             pref_sum += nums[i]
