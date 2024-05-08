@@ -1,40 +1,37 @@
-class Node:
-    def __init__(self, val=None, next=None):
-        self.val = val
-        self.next = next
+from collections import deque
+from queue import Queue
+
+n, m = map(int, input().split())
+adj_list = [[] for _ in range(n)]
+color = ['white']*n
+previous = [None]*n
 
 
-class Queue:
-    def __init__(self):
-        self.head = None
-        self.tail = None
+def BFS(s):
+    planned = Queue()
+    planned.put(s)
+    color[s] = 'gray'
 
-    def push(self, val):
-        if self.head is None:
-            self.head = self.tail = Node(val)
-        else:
-            self.tail.next = Node(val)
-            self.tail = self.tail.next
-
-    def pop(self):
-        if self.head is None:
-            raise RuntimeError('Queue is empty')
-        head_val = self.head.val
-        self.head = self.head.next
-        return head_val
+    # distance[s] = 0
+    while not planned.empty():
+        u = planned.get()
+        print(u + 1, end=' ')
+        for v in adj_list[u]:
+            if color[v] == 'white':
+                # distance[v] = distance[u] + 1
+                previous[v] = u
+                color[v] = 'gray'
+                planned.put(v)
+        color[u] = 'black'
 
 
-queue = Queue()
-queue.push(1)
-queue.push(3)
-print(queue.pop())
-queue.push(15)
-print(queue.pop())
-queue.push(1)
-queue.push(11)
-queue.push(-13)
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
+for _ in range(m):
+    i, j = map(int, input().split())
+    i -= 1
+    j -= 1
+    adj_list[i].append(j)
+    adj_list[j].append(i)
+
+start_vertex = int(input()) - 1
+
+BFS(start_vertex)
